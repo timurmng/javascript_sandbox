@@ -1,0 +1,20 @@
+[
+  {
+    "id" : 1,
+    "name" : "Timur Mengazi",
+    "company" : "Avira Soft SRL",
+    "phone" : "0737-642-966"
+  },
+  {
+    "id" : 2,
+    "name" : "Timurikka Mng",
+    "company" : "Linux Soft SRL",
+    "phone" : "6969-696-969"
+  },
+  {
+    "id" : 3,
+    "name" : "Pumbalez",
+    "company" : "Somalia Airlines",
+    "phone" : "555-555-555"
+  }
+]
