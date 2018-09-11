@@ -30,21 +30,33 @@ const posts = [
 // getPosts();
 
 // Async with callbacks
-function createPost(post, callback) {
-    setTimeout(function () {
-        posts.push(post);
-        callback();
-    }, 2000);
+function createPost(post) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            posts.push(post);
+            const error = false;
+            if (!error) {
+                resolve();
+            } else {
+                reject('Something went wrong!');
+            }
+        }, 2000);
+    });
+
 }
 
 function getPosts() {
     setTimeout(function () {
         let output = ``;
-        posts.forEach(function (post){
+        posts.forEach(function (post) {
             output += `<li>${post.title}`;
         });
         document.body.innerHTML = output;
     })
 }
 
-createPost({title: 'Post three', body: 'This is post three'}, getPosts);
+createPost({title: 'Post three', body: 'This is post three'})
+    .then(getPosts)
+    .catch(function (error) {
+        console.log(error)
+    });
